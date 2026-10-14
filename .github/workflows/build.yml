@@ -35,6 +35,7 @@ jobs:
           sudo useradd -m -s /bin/bash testuser
           echo 'testuser:Kp-Test-2026!' | sudo chpasswd
           echo 'echo KEEPALIVE-TEST-OK' | sudo tee -a /home/testuser/.profile >/dev/null
+          sudo -u testuser touch /home/testuser/.hushlogin   # lange Ubuntu-MOTD unterdrücken
           sudo systemctl restart ssh || sudo service ssh restart
           FPS=$(for f in /etc/ssh/ssh_host_*_key.pub; do ssh-keygen -lf "$f" | awk '{print $2}'; done | paste -sd, -)
           echo "Hostkey-Fingerprints: $FPS"
@@ -49,7 +50,7 @@ jobs:
         run: |
           set -o pipefail
           chmod +x gradlew
-          ./gradlew --no-daemon --stacktrace testDebugUnitTest assembleDebug assembleRelease 2>&1 | tee build.log
+          ./gradlew --no-daemon --stacktrace --continue testDebugUnitTest assembleDebug assembleRelease 2>&1 | tee build.log
 
       - name: APK prüfen
         if: always()
