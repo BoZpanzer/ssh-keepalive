@@ -1,0 +1,19 @@
+de.boz.sshkeepalive.FingerprintAndBackoffTest: tests=4 failures=0 errors=0 skipped=0
+  [OK] backoffGrowsExponentiallyAndIsCapped (0.035s)
+  [OK] hostIdUsesOpenSshNotation (0.014s)
+  [OK] sha256MatchesOpenSshFormat (0.0s)
+  [OK] keyTypeIsParsedFromBlob (0.0s)
+de.boz.sshkeepalive.SshIntegrationTest: tests=5 failures=0 errors=0 skipped=0
+  [OK] wrongPasswordFailsWithoutRetryLoop (2.104s)
+  [OK] connectsWithTrustedKeyAndKeepsSessionAlive (7.53s)
+  [OK] serverSideDropIsDetected (1.885s)
+  [OK] changedHostKeyIsDetected (0.019s)
+  [OK] unknownHostKeyIsRejectedUntilConfirmed (0.019s)
+  stdout:
+    Hostkey: ssh-ed25519 SHA256:DcdNbrliavRoPWOE5zuV3B4X0Xsef+/qjZAjcg0sPXc
+    Auth: Anmeldung fehlgeschlagen – Benutzername oder Passwort falsch.
+    Hostkey: ssh-ed25519 SHA256:DcdNbrliavRoPWOE5zuV3B4X0Xsef+/qjZAjcg0sPXc
+    Server: SSH-2.0-OpenSSH_9.6p1 Ubuntu-3ubuntu13.20
+    Servermeldung: testuser@runnervm8k3b6:~$
+    Hostkey: ssh-ed25519 SHA256:DcdNbrliavRoPWOE5zuV3B4X0Xsef+/qjZAjcg0sPXc
+    Hostkey: ssh-ed25519 SHA256:DcdNbrliavRoPWOE5zuV3B4X0Xsef+/qjZAjcg0sPXc

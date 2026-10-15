@@ -1,0 +1,122 @@
+== release: app/build/outputs/apk/release/app-release.apk
+-rw-r--r-- 1 runner runner 7257714 Oct 15 10:58 app/build/outputs/apk/release/app-release.apk
+f71580b6f33df041804d25e8dfeac91fbf0083e65fec728d82acf44fd0a092dd  app/build/outputs/apk/release/app-release.apk
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v3.2 scheme (APK Signature Scheme v3.2): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+V2 Signer: certificate DN: C=US, O=Android, CN=Android Debug
+V2 Signer: certificate SHA-256 digest: 2f6e587da35fee5d7bc558e277acbeafde400f30e27c7c66f4890860072882f0
+V2 Signer: certificate SHA-1 digest: 8aaecc19ef1d3f46460e9f0f6c4c2e3fc0054d67
+V2 Signer: certificate MD5 digest: 0869f74de4394ae268b240aecc704120
+V2 Signer: key algorithm: RSA
+V2 Signer: key size (bits): 2048
+V2 Signer: public key SHA-256 digest: 319b9948bcfe1fc0664a9a554afe1f56a876c3a8d7433e70751f6a6e156cd348
+V2 Signer: public key SHA-1 digest: cbebb22d9d3a79e3f1f50d61bb16783301d8b607
+V2 Signer: public key MD5 digest: f133d5fb627bfee68fa65a421d532a20
+package: name='de.boz.sshkeepalive' versionCode='1' versionName='1.0.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+minSdkVersion:'26'
+targetSdkVersion:'36'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='android.permission.ACCESS_WIFI_STATE'
+uses-permission: name='android.permission.CHANGE_NETWORK_STATE'
+uses-permission: name='android.permission.WAKE_LOCK'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS'
+uses-permission: name='de.boz.sshkeepalive.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-label:'SSH KeepAlive'
+application-label-af:'SSH KeepAlive'
+application-label-am:'SSH KeepAlive'
+application-label-ar:'SSH KeepAlive'
+application-label-as:'SSH KeepAlive'
+application-label-az:'SSH KeepAlive'
+application-label-be:'SSH KeepAlive'
+application-label-bg:'SSH KeepAlive'
+application-label-bn:'SSH KeepAlive'
+application-label-bs:'SSH KeepAlive'
+application-label-ca:'SSH KeepAlive'
+application-label-cs:'SSH KeepAlive'
+application-label-da:'SSH KeepAlive'
+application-label-de:'SSH KeepAlive'
+application-label-el:'SSH KeepAlive'
+application-label-en-AU:'SSH KeepAlive'
+application-label-en-CA:'SSH KeepAlive'
+application-label-en-GB:'SSH KeepAlive'
+application-label-en-IN:'SSH KeepAlive'
+application-label-en-XC:'SSH KeepAlive'
+application-label-es:'SSH KeepAlive'
+application-label-es-US:'SSH KeepAlive'
+application-label-et:'SSH KeepAlive'
+application-label-eu:'SSH KeepAlive'
+application-label-fa:'SSH KeepAlive'
+application-label-fi:'SSH KeepAlive'
+application-label-fr:'SSH KeepAlive'
+== debug: app/build/outputs/apk/debug/app-debug.apk
+-rw-r--r-- 1 runner runner 9895383 Oct 15 10:58 app/build/outputs/apk/debug/app-debug.apk
+3ee36d6cb104af3dc04e3f552561042b5b4c82b63ac8ec8926ede6b0f4e0a802  app/build/outputs/apk/debug/app-debug.apk
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v3.2 scheme (APK Signature Scheme v3.2): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+V2 Signer: certificate DN: C=US, O=Android, CN=Android Debug
+V2 Signer: certificate SHA-256 digest: 2f6e587da35fee5d7bc558e277acbeafde400f30e27c7c66f4890860072882f0
+V2 Signer: certificate SHA-1 digest: 8aaecc19ef1d3f46460e9f0f6c4c2e3fc0054d67
+V2 Signer: certificate MD5 digest: 0869f74de4394ae268b240aecc704120
+V2 Signer: key algorithm: RSA
+V2 Signer: key size (bits): 2048
+V2 Signer: public key SHA-256 digest: 319b9948bcfe1fc0664a9a554afe1f56a876c3a8d7433e70751f6a6e156cd348
+V2 Signer: public key SHA-1 digest: cbebb22d9d3a79e3f1f50d61bb16783301d8b607
+V2 Signer: public key MD5 digest: f133d5fb627bfee68fa65a421d532a20
+package: name='de.boz.sshkeepalive' versionCode='1' versionName='1.0.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+minSdkVersion:'26'
+targetSdkVersion:'36'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+uses-permission: name='android.permission.ACCESS_WIFI_STATE'
+uses-permission: name='android.permission.CHANGE_NETWORK_STATE'
+uses-permission: name='android.permission.WAKE_LOCK'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='android.permission.FOREGROUND_SERVICE_SPECIAL_USE'
+uses-permission: name='android.permission.POST_NOTIFICATIONS'
+uses-permission: name='android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS'
+uses-permission: name='de.boz.sshkeepalive.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-label:'SSH KeepAlive'
+application-label-af:'SSH KeepAlive'
+application-label-am:'SSH KeepAlive'
+application-label-ar:'SSH KeepAlive'
+application-label-as:'SSH KeepAlive'
+application-label-az:'SSH KeepAlive'
+application-label-be:'SSH KeepAlive'
+application-label-bg:'SSH KeepAlive'
+application-label-bn:'SSH KeepAlive'
+application-label-bs:'SSH KeepAlive'
+application-label-ca:'SSH KeepAlive'
+application-label-cs:'SSH KeepAlive'
+application-label-da:'SSH KeepAlive'
+application-label-de:'SSH KeepAlive'
+application-label-el:'SSH KeepAlive'
+application-label-en-AU:'SSH KeepAlive'
+application-label-en-CA:'SSH KeepAlive'
+application-label-en-GB:'SSH KeepAlive'
+application-label-en-IN:'SSH KeepAlive'
+application-label-en-XC:'SSH KeepAlive'
+application-label-es:'SSH KeepAlive'
+application-label-es-US:'SSH KeepAlive'
+application-label-et:'SSH KeepAlive'
+application-label-eu:'SSH KeepAlive'
+application-label-fa:'SSH KeepAlive'
+application-label-fi:'SSH KeepAlive'
+application-label-fr:'SSH KeepAlive'
