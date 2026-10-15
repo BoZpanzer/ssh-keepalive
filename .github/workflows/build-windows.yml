@@ -1,0 +1,64 @@
+name: Build Windows SSH KeepAlive EXE
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - feature/windows-keepalive-exe
+    paths:
+      - 'windows/**'
+      - '.github/workflows/build-windows.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  windows-exe:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Compile single-file Windows app
+        shell: pwsh
+        run: |
+          dotnet publish windows/SSHKeepAlive.Windows/SSHKeepAlive.Windows.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:PublishTrimmed=false -o dist
+          if ($LASTEXITCODE -ne 0) { throw 'dotnet publish failed' }
+
+      - name: Smoke test EXE and generate SHA256
+        shell: pwsh
+        run: |
+          $exe = 'dist/SSHKeepAlive.Windows.exe'
+          if (!(Test-Path $exe)) { throw "Missing EXE: $exe" }
+          & $exe --self-test
+          if ($LASTEXITCODE -ne 0) { throw 'Smoke test failed' }
+          Rename-Item -Path $exe -NewName 'SSH-KeepAlive.exe'
+          $hash = (Get-FileHash dist/SSH-KeepAlive.exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  SSH-KeepAlive.exe" | Set-Content dist/SHA256.txt -Encoding ascii
+          Get-Item dist/SSH-KeepAlive.exe | Select-Object Name,Length
+
+      - name: Upload Windows EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: SSH-KeepAlive-Windows-x64
+          path: |
+            dist/SSH-KeepAlive.exe
+            dist/SHA256.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish release on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "windows-${{ github.run_number }}"
+          gh release create $tag dist/SSH-KeepAlive.exe dist/SHA256.txt --target "${{ github.sha }}" --title "SSH KeepAlive Windows ($tag)" --notes "Standalone Windows x64 executable. Unsigned; check SSH fingerprint independently. Windows must remain awake and user logged in." --latest
+          if ($LASTEXITCODE -ne 0) { throw 'Could not create GitHub Release' }
