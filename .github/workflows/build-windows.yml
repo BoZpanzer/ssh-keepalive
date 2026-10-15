@@ -36,8 +36,8 @@ jobs:
         run: |
           $exe = 'dist/SSHKeepAlive.Windows.exe'
           if (!(Test-Path $exe)) { throw "Missing EXE: $exe" }
-          & $exe --self-test
-          if ($LASTEXITCODE -ne 0) { throw 'Smoke test failed' }
+          $test = Start-Process -FilePath (Resolve-Path $exe) -ArgumentList '--self-test' -Wait -PassThru
+          if ($test.ExitCode -ne 0) { throw "Smoke test failed with exit code $($test.ExitCode)" }
           Rename-Item -Path $exe -NewName 'SSH-KeepAlive.exe'
           $hash = (Get-FileHash dist/SSH-KeepAlive.exe -Algorithm SHA256).Hash.ToLowerInvariant()
           "$hash  SSH-KeepAlive.exe" | Set-Content dist/SHA256.txt -Encoding ascii
